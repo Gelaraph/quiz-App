@@ -1,42 +1,164 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Anek Malayalam", sans-serif;
+}
+.homeScreen {
+  background-color: rgb(246, 230, 224);
+  background-image: url(../src/assets//main-flower.svg);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  color: #0d1926;
+}
+.flex {
+  display: flex;
+}
+
+.home-btn,
+.quiz-btn {
+  border: 2px solid currentColor;
+  border-radius: 3rem;
+  color: #0d1926;
+  font-family: roboto;
+  font-size: 4rem;
+  font-weight: 100;
+  overflow: hidden;
+  padding: 1rem 2rem;
+  position: relative;
+  text-decoration: none;
+  transition: 0.2s transform ease-in-out;
+  will-change: transform;
+  z-index: 0;
+  cursor: pointer;
+}
+.coolBeans:after,
+.quiz-btn:after {
+  background-color: #0d1926;
+  border-radius: 3rem;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-100%, 0) rotate(10deg);
+  transform-origin: top left;
+  transition: 0.2s transform ease-out;
+  will-change: transform;
+  z-index: -1;
+}
+
+.home-btn:hover::after,
+.quiz-btn:hover::after {
+  transform: translate(0, 0);
+}
+
+.home-btn:hover,
+.quiz-btn:hover {
+  border: 2px solid transparent;
+  color: #8cb0d9;
+  transform: scale(1.05);
+  will-change: transform;
+}
+.quiz-btn {
+  font-size: 1rem;
+  font-weight: 500;
+  width: 40%;
+  margin-top: 1em;
+}
+.quizApp-ui,
+.result-ui {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 1.5em;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2em;
+}
+label {
+  width: 100%;
   text-align: center;
 }
+.header {
+  width: 100%;
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 3em;
+}
+.header p {
+  width: 40%;
+}
+ul {
+  margin-top: 2em;
+}
+li {
+  text-decoration: none;
+  list-style: none;
+  color: #2d264b;
+  font-size: 16px;
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 16px;
+  padding: 11px;
+  margin-top: 15px;
+  cursor: pointer;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+input {
+  opacity: 0;
+}
+.selected {
+  border: 1px solid red;
+}
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.question {
+  font-size: 18px;
+  font-weight: 500;
+  width: 80%;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.error {
+  margin-top: 1em;
+  font-size: 10px;
+  color: red;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.result-ui {
+  width: 20rem;
+  text-align: center;
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.result-ui h2 {
+  margin-bottom: 1em;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.score-breakdown-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  width: 80%;
 }
-
-.card {
-  padding: 2em;
+.score-breakdown {
+  display: flex;
+  column-gap: 2em;
+  justify-content: space-between;
 }
-
-.read-the-docs {
-  color: #888;
+.play-btn {
+  margin-top: 2em;
+  padding: 0.5em;
+}
+.home-intro {
+  text-align: center;
+}
+.home-intro h2 {
+  font-size: 3em;
+  margin-bottom: 1em;
 }
